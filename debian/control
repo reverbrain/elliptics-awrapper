@@ -1,0 +1,21 @@
+Source: elliptics-awrapper
+Priority: extra
+Maintainer: Ruslan Nigmatullin <euroelessar@yandex.ru>
+Build-Depends: debhelper (>= 8.0.0), cmake
+Standards-Version: 3.9.4
+Section: libs
+Homepage: https://github.com/reverbrain/elliptics-awrapper
+
+#Package: elliptics-awrapper-dev
+#Section: libdevel
+#Architecture: any
+#Depends: elliptics-awrapper (= ${binary:Version})
+#Description: <insert up to 60 chars description>
+# <insert long description, indented with spaces>
+
+Package: elliptics-awrapper
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
