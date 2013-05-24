@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.6)
-project (elliptics-wrapper)
+project (elliptics-awrapper)
 
 FILE (READ "${CMAKE_CURRENT_SOURCE_DIR}/debian/changelog" DEBCHANGELOG)
 
@@ -11,18 +11,13 @@ set(CMAKE_CXX_FLAGS "-g -std=c++0x -W -Wall -Wextra -fstack-protector-all")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-set(ELLIPTICS_WRAPPER_CPP
-	src/wrapper.h
-	src/wrapper.cpp
-)
+add_library(elliptics-awrapper MODULE src/wrapper)
 
-add_library(elliptics-wrapper MODULE src/wrapper)
-
-install(TARGETS elliptics-wrapper
+install(TARGETS elliptics-awrapper
 	LIBRARY DESTINATION lib/elliptics)
 
-set_target_properties(elliptics-wrapper PROPERTIES
+set_target_properties(elliptics-awrapper PROPERTIES
 	PREFIX ""
 	SUFFIX ".plugin")
 
-target_link_libraries(elliptics-wrapper elliptics_cpp)
+target_link_libraries(elliptics-awrapper elliptics_cpp)
